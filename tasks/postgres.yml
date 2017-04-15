@@ -17,6 +17,8 @@
 - name: install psycopg2 python module
   pip: name=psycopg2
 
+- name: Ensure the PostgreSQL service is running
+  service: name=postgresql state=started enabled=yes
 
 - name: create postgres user for deployer
   postgresql_user:
